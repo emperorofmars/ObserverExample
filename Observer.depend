@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1430940326 source:/home/mars/Projekte/ObserverExample/main.cpp
+	"src/Clock.h"
+	"src/ClockViewer.h"
+	<iostream>
+
+1430941343 /home/mars/Projekte/ObserverExample/src/Clock.h
+	<vector>
+	"IObservable.h"
+
+1430940992 /home/mars/Projekte/ObserverExample/src/IObservable.h
+	"IObserver.h"
+
+1430940528 /home/mars/Projekte/ObserverExample/src/IObserver.h
+
+1430941411 /home/mars/Projekte/ObserverExample/src/ClockViewer.h
+	<vector>
+	<string>
+	"IObserver.h"
+	"Clock.h"
+
+1430941013 source:/home/mars/Projekte/ObserverExample/src/Clock.cpp
+	"Clock.h"
+
+1430941296 source:/home/mars/Projekte/ObserverExample/src/ClockViewer.cpp
+	"ClockViewer.h"
+
