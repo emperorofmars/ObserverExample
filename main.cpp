@@ -6,13 +6,9 @@
 
 int main(){
 	Clock observedClock;
-	ClockViewer viewer01("01");
-	ClockViewer viewer02("02");
-	ClockViewer viewer03("03");
-
-	observedClock.addObserver(&viewer01);
-	observedClock.addObserver(&viewer02);
-	observedClock.addObserver(&viewer03);
+	ClockViewer viewer01("01", &observedClock);
+	ClockViewer viewer02("02", &observedClock);
+	ClockViewer viewer03("03", &observedClock);
 
 	while(1){
 		observedClock.setTime();

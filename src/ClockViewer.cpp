@@ -6,20 +6,32 @@
 
 #include "ClockViewer.h"
 
-ClockViewer::ClockViewer(const std::string &name){
+ClockViewer::ClockViewer(const std::string &name, Clock *viewedClock){
 	mName = name;
+	setClock(viewedClock);
 }
 
 ClockViewer::~ClockViewer(){
+	if(mClock){
+		mClock->removeObserver(this);
+	}
 }
 
-void ClockViewer::refresh(time_t time){
-	mTime = time;
-	print();
+void ClockViewer::setClock(Clock *viewedClock){
+	mClock = viewedClock;
+	if(mClock){
+		mClock->addObserver(this);
+	}
 	return;
 }
 
-void ClockViewer::print(){
-	std::cout << "Display[ " << mName << " ]: " << ctime(&mTime);
+void ClockViewer::refresh(){
+	if(mClock){
+		time_t t = mClock->getTime();
+		std::cout << "Display[ " << mName << " ]: " << ctime(&t);
+	}
+	else{
+		std::cout << "Display[ " << mName << " ]: " << "no clock attached!";
+	}
 	return;
 }

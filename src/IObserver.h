@@ -13,7 +13,7 @@ class IObserver{
 public:
 	virtual ~IObserver(){};
 
-	virtual void refresh(time_t time) = 0;
+	virtual void refresh() = 0;
 };
 
 #endif // IOBSERVER_H

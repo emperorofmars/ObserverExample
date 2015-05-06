@@ -15,15 +15,16 @@
 
 class ClockViewer : public IObserver{
 public:
-	ClockViewer(const std::string &name);
+	ClockViewer(const std::string &name, Clock *viewedClock);
 	~ClockViewer();
 
-	virtual void refresh(time_t time);
-	void print();
+	void setClock(Clock *viewedClock);
+
+	virtual void refresh();
 
 private:
 	std::string mName;
-	time_t mTime;
+	Clock *mClock;
 };
 
 #endif // CLOCKVIEWER_H

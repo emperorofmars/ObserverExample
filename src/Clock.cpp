@@ -37,7 +37,7 @@ void Clock::removeObserver(IObserver *observer){
 
 void Clock::messageObserver(){
 	for(unsigned int i = 0; i < mObservers.size(); i++){
-		mObservers[i]->refresh(mTime);
+		mObservers[i]->refresh();
 	}
 	return;
 }
