@@ -8,6 +8,7 @@
 #define CLOCK_H
 
 #include <vector>
+#include <ctime>
 #include "IObservable.h"
 
 class Clock : public IObservable{
@@ -19,13 +20,13 @@ public:
 	virtual void removeObserver(IObserver *observer);
 	virtual void messageObserver();
 
-	void setTime(int time);
+	void setTime();
 
-	int getTime();
+	time_t getTime();
 
 private:
 	std::vector<IObserver *> mObservers;
-	int mTime;
+	time_t mTime;
 };
 
 #endif // CLOCK_H

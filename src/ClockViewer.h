@@ -9,25 +9,21 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 #include "IObserver.h"
 #include "Clock.h"
 
 class ClockViewer : public IObserver{
 public:
-	ClockViewer();
+	ClockViewer(const std::string &name);
 	~ClockViewer();
 
-	virtual void refresh();
-
-	void setup(std::string name);
+	virtual void refresh(time_t time);
+	void print();
 
 private:
-	void setClock(Clock* clock);
-
 	std::string mName;
-	Clock *mClock;
-
-	friend Clock;
+	time_t mTime;
 };
 
 #endif // CLOCKVIEWER_H

@@ -6,20 +6,20 @@
 
 #include "ClockViewer.h"
 
-ClockViewer::ClockViewer(){
+ClockViewer::ClockViewer(const std::string &name){
+	mName = name;
 }
 
 ClockViewer::~ClockViewer(){
 }
 
-void ClockViewer::refresh(){
+void ClockViewer::refresh(time_t time){
+	mTime = time;
+	print();
 	return;
 }
 
-void setClock(Clock* clock){
-	return;
-}
-
-void setup(std::string name){
+void ClockViewer::print(){
+	std::cout << "Display[ " << mName << " ]: " << ctime(&mTime);
 	return;
 }
